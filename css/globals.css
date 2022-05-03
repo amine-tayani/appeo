@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-x-hidden bg-neutral-900 font-inter;
+}
+
+.primary {
+  @apply bg-gradient-to-b from-[#1a1b20] to-[#1f212b];
+}

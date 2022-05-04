@@ -12,11 +12,11 @@ const Features: React.FunctionComponent = () => {
       <div className="container mx-auto px-5 py-24">
         <div className="mx-auto mt-40 max-w-3xl text-center">
           <p className=" text-xl text-neutral-400 ">WHO IS THIS APP FOR ?</p>
-          <h1 className="mt-8 mb-12 text-5xl font-bold leading-snug text-white">
+          <h1 className="mx-4 mt-8 mb-12 text-3xl font-bold leading-snug text-white md:text-5xl">
             Trace is suitable for Job seekers who want to land a job asap
           </h1>
         </div>
-        <div className=" flex flex-wrap justify-center space-x-6">
+        <div className=" flex flex-wrap justify-center lg:space-x-6">
           <div className="p-4 md:w-[400px]">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
@@ -65,7 +65,7 @@ const Features: React.FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className=" mt-6 flex flex-wrap justify-center space-x-6">
+        <div className=" flex flex-wrap justify-center lg:mt-6 lg:space-x-6">
           <div className="p-4 md:w-[400px]">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">

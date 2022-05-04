@@ -6,10 +6,10 @@ const Pricing: React.FunctionComponent = () => {
       <div className="container mx-auto">
         <div className="mx-auto max-w-3xl text-center">
           <p className=" text-xl text-neutral-400 ">PRICING</p>
-          <h1 className="my-8 text-5xl font-bold leading-snug text-white">
+          <h1 className="my-8 text-3xl font-bold leading-snug text-white md:text-5xl">
             Unlock unlimited Experience
           </h1>
-          <p className=" text-3xl text-neutral-400 ">
+          <p className="text-xl text-neutral-400 md:text-3xl ">
             1 month free trial with PRO
           </p>
         </div>
@@ -33,7 +33,7 @@ const Pricing: React.FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-              <div className=" md:w-1/4">
+              <div className="p-4 md:w-1/4 md:p-0">
                 <div className="h-full overflow-hidden rounded-xl bg-blue-600 text-white ">
                   <div className="mt-4 p-10">
                     <h2 className=" mb-3 font-medium">PRO 1 YEAR</h2>

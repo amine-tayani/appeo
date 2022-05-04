@@ -1,11 +1,14 @@
+import { Transition } from '@headlessui/react'
 import * as React from 'react'
 import NavPopover from './NavPopover'
 
 const Navbar: React.FunctionComponent = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
   return (
     <nav className="mt-4 px-2 py-2.5 ">
       <div className="container mx-auto  flex flex-wrap items-center justify-between">
-        <div className="ml-12 flex items-baseline">
+        <div className="ml-8 flex items-baseline">
           <div className="mr-[2px] mb-1.5 h-3 w-3 rounded-full bg-white" />
           <a href="/" className="text-3xl font-bold text-white ">
             <h1>trace</h1>
@@ -21,28 +24,28 @@ const Navbar: React.FunctionComponent = () => {
             </button>
           </div>
           <button
-            data-collapse-toggle="mobile-menu-4"
-            type="button"
-            className="inline-flex items-center rounded-lg py-3 px-12 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
-            aria-controls="mobile-menu-4"
-            aria-expanded="false"
+            aria-label="Open Menu"
+            onClick={() => {
+              setIsMenuOpen(true)
+            }}
+            className="inline-flex items-center rounded-lg py-3 px-4 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
           >
-            <span className="sr-only">Open main menu</span>
+            {/* button to open the mobile menu  */}
             <svg
-              className="h-10 w-10"
+              className="h-8 w-8 rotate-180 transform "
               strokeWidth={1.4}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M3 5H21"
+                d="M3 5H11"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
-                d="M3 12H21"
+                d="M3 12H16"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -54,27 +57,96 @@ const Navbar: React.FunctionComponent = () => {
                 strokeLinejoin="round"
               />
             </svg>
-
-            <svg
-              className="hidden h-10 w-10"
-              strokeWidth={1.4}
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
           </button>
+          <Transition
+            show={isMenuOpen}
+            enter="transition-all ease-in-out duration-100"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-all ease-in-out duration-300"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="absolute lg:hidden">
+              <div className="fixed inset-x-0 top-0 z-50  min-w-full rounded bg-neutral-900 ">
+                <div className=" mt-7 flex items-center justify-between">
+                  <div className="ml-10 flex items-baseline">
+                    <div className="mr-[2px] mb-1.5 h-3 w-3 rounded-full bg-white" />
+                    <a href="/" className="text-3xl font-bold text-white ">
+                      <h1>trace</h1>
+                    </a>
+                  </div>
+                  <div className="mx-4">
+                    <button
+                      aria-label="Close Menu"
+                      className="text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                      }}
+                    >
+                      <svg
+                        className=" h-12 w-12"
+                        strokeWidth={1.4}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <nav className="mx-2 h-screen w-screen">
+                  <ul className="mx-8 mt-20 space-y-10 text-white">
+                    <li>
+                      <a
+                        href="/"
+                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
+                      >
+                        Features
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
+                      >
+                        Blog
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
+                      >
+                        Support
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        title="About us"
+                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
+                      >
+                        Pricing
+                      </a>
+                    </li>
+                    <button className="mt-12 rounded-lg bg-blue-600 px-20 py-4 text-xl font-medium text-white hover:bg-blue-500 focus:outline-none ">
+                      Sign up for Free
+                    </button>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </Transition>
+          {/* button to close the mobile menu  */}
         </div>
-        <div
-          className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
-          id="mobile-menu-4"
-        >
+        <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-16 ">
             <li>
               <NavPopover />

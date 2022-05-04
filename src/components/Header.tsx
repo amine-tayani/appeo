@@ -9,13 +9,13 @@ const BodyStyles = [
 const Header: React.FunctionComponent = () => {
   return (
     <div className={BodyStyles}>
-      <div className="relative mt-24 max-w-5xl text-center ">
-        <h1 className="text-5xl font-bold  leading-tight text-white md:text-[80px] md:leading-[86px]">
+      <div className="relative mx-8 mt-24 max-w-2xl text-center lg:mx-0 lg:max-w-5xl ">
+        <h1 className="text-4xl font-bold leading-tight text-white md:text-[80px] md:leading-[86px]">
           Organize, Track and Get Reminder of your job applications
         </h1>
       </div>
-      <div className="max-w-3xl text-center">
-        <p className="mt-12 text-xl text-neutral-400 ">
+      <div className="max-w-xl px-12 text-center md:max-w-3xl">
+        <p className="mt-12  text-neutral-400 md:text-xl ">
           Make your job search less stressful with the help of smart and
           specialized job application tracker app
         </p>

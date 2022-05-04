@@ -8,11 +8,10 @@ const Companies: React.FunctionComponent = () => {
           <p className=" text-xl text-neutral-400 ">
             BIG COMPANIES THAT USE TRACE ON DAILY BASIS
           </p>
-          <div className="my-20 flex items-center space-x-12">
+          <div className="mr-8 ml-4 mt-20 mb-12 grid grid-cols-2 gap-12 lg:mr-0 lg:ml-0 lg:flex lg:items-center lg:gap-0 lg:space-x-12">
             <div>
               <svg
-                width="138"
-                height="18"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +24,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="22"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +37,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="30"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +58,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="26"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 26"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +85,9 @@ const Companies: React.FunctionComponent = () => {
                 />
               </svg>
             </div>
-            <div className=" w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6">
+            <div>
               <svg
-                width="138"
-                height="29"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 29"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,10 +98,9 @@ const Companies: React.FunctionComponent = () => {
                 />
               </svg>
             </div>
-            <div className=" w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6">
+            <div>
               <svg
-                width="138"
-                height="33"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 33"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,11 +112,10 @@ const Companies: React.FunctionComponent = () => {
               </svg>
             </div>
           </div>
-          <div className="my-20 flex items-center space-x-12">
+          <div className="mr-8 ml-4 mb-20 grid grid-cols-2 gap-12 lg:mr-0 lg:ml-0 lg:flex lg:items-center lg:gap-0 lg:space-x-12">
             <div>
               <svg
-                width="138"
-                height="18"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,8 +128,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="22"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +141,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="30"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,8 +162,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width="138"
-                height="26"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 26"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -199,10 +189,9 @@ const Companies: React.FunctionComponent = () => {
                 />
               </svg>
             </div>
-            <div className=" w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6">
+            <div>
               <svg
-                width="138"
-                height="29"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 29"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -213,10 +202,9 @@ const Companies: React.FunctionComponent = () => {
                 />
               </svg>
             </div>
-            <div className=" w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6">
+            <div>
               <svg
-                width="138"
-                height="33"
+                className="w-28 md:w-36"
                 viewBox="0 0 138 33"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

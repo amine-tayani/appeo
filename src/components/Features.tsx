@@ -13,7 +13,7 @@ const Features: React.FunctionComponent = () => {
         <div className="mx-auto mt-40 max-w-3xl text-center">
           <p className=" text-xl text-neutral-400 ">WHO IS THIS APP FOR ?</p>
           <h1 className="mx-4 mt-8 mb-12 text-3xl font-bold leading-snug text-white md:text-5xl">
-            Trace is suitable for Job seekers who want to land a job asap
+            Trace is suitable for Job seekers who want to land a job
           </h1>
         </div>
         <div className=" flex flex-wrap justify-center lg:space-x-6">

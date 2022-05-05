@@ -13,10 +13,10 @@ const IndexPage = () => {
     <React.Fragment>
       <Navbar />
       <Header />
+      <Companies />
       <Features />
       <Sections />
       <CommentList />
-      <Companies />
       <Pricing />
       <Footer />
     </React.Fragment>

@@ -16,7 +16,12 @@ const Sections: React.FunctionComponent = () => {
           </div>
           <div className="relative mt-8 flex h-96 w-full overflow-hidden rounded-xl bg-blue-400 bg-gradient-to-r from-[#0052D4] via-[#4364F7] to-[#6FB1FC] p-20 sm:mr-10 md:w-1/2 lg:left-32 lg:mt-0 lg:h-[600px] lg:w-3/5">
             <div className="flex flex-wrap py-6 ">
-              <div className="px-6">{/* image */}</div>
+              <div className="px-6">
+                <img
+                  src="https://res.cloudinary.com/glasnik/image/upload/v1651756076/media/image2-section_tefzfp.png"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -25,7 +30,12 @@ const Sections: React.FunctionComponent = () => {
         <div className="container mx-auto flex flex-wrap items-center px-5 py-24 sm:flex-nowrap">
           <div className="relative order-last flex h-96 w-full overflow-hidden rounded-xl bg-blue-400 bg-gradient-to-r from-[#0052D4] via-[#4364F7] to-[#6FB1FC] p-20 sm:mr-10 md:w-1/2 lg:right-32 lg:order-first lg:h-[600px] lg:w-3/5">
             <div className="mt-8 flex flex-wrap py-6">
-              <div className="px-6">{/* image */}</div>
+              <div className="px-6">
+                <img
+                  src="https://res.cloudinary.com/glasnik/image/upload/v1651756079/media/image1-section_v5ghrn.png"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
           <div className="mx-4 mt-8 w-full max-w-xl md:mt-0 md:py-8">

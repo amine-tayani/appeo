@@ -5,13 +5,13 @@ const Companies: React.FunctionComponent = () => {
     <section className="body-font text-gray-600">
       <div className="container mx-auto max-w-6xl px-5 py-24">
         <div className="mx-auto my-10 text-center">
-          <p className=" text-xl text-neutral-400 ">
+          <p className=" mx-12 leading-loose text-neutral-400 md:mx-0 md:text-xl md:leading-none">
             BIG COMPANIES THAT USE TRACE ON DAILY BASIS
           </p>
-          <div className="mr-8 ml-4 mt-20 mb-0 grid grid-cols-2 items-center justify-center gap-x-20 lg:mb-4 lg:mr-0 lg:ml-0 lg:flex lg:gap-0 lg:space-x-20">
+          <div className="mx-4 mt-10 mb-0 grid grid-cols-2 place-items-center items-center justify-center gap-x-4 gap-y-4 md:mt-20 lg:mb-4 lg:mr-0 lg:ml-0 lg:flex lg:gap-0 lg:space-x-20">
             <div>
               <svg
-                width={120}
+                className="w-[70px] md:w-[120px]"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={90}
+                className="w-[60px] md:w-[100px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={90}
+                className="w-[60px] md:w-[100px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={90}
+                className="w-[60px] md:w-[100px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={80}
+                className="w-[60px] md:w-[90px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Companies: React.FunctionComponent = () => {
             <div>
               <svg
                 fill="none"
-                width={88}
+                className="w-[60px] md:w-[90px]"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -88,10 +88,10 @@ const Companies: React.FunctionComponent = () => {
               </svg>
             </div>
           </div>
-          <div className="mr-8 ml-4 mb-12 grid grid-cols-2 items-center justify-center gap-x-20 gap-y-4 lg:mt-0 lg:mb-4 lg:mr-0 lg:ml-0 lg:flex lg:items-center lg:gap-0 lg:space-x-24">
+          <div className="mx-4 mt-4 mb-0 grid grid-cols-2 place-items-center items-center justify-center gap-y-4 gap-x-4 lg:mt-0 lg:mb-4 lg:mr-0 lg:ml-0 lg:flex lg:items-center lg:gap-0 lg:space-x-24">
             <div>
               <svg
-                width={80}
+                className="w-[60px] md:w-[90px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={90}
+                className="w-[60px] md:w-[90px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ const Companies: React.FunctionComponent = () => {
 
             <div>
               <svg
-                width={90}
+                className="w-[50px] md:w-[90px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@ const Companies: React.FunctionComponent = () => {
             <div>
               <svg
                 fill="none"
-                width={60}
+                className="w-[40px] md:w-[70px]"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -145,7 +145,7 @@ const Companies: React.FunctionComponent = () => {
             <div>
               <svg
                 fill="none"
-                width={60}
+                className="w-[40px] md:w-[60px]"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -157,7 +157,7 @@ const Companies: React.FunctionComponent = () => {
             </div>
             <div>
               <svg
-                width={110}
+                className="w-[60px] md:w-[90px]"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"

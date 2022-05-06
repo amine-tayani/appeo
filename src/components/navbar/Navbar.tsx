@@ -59,47 +59,55 @@ const Navbar: React.FunctionComponent = () => {
             </svg>
           </button>
           <Transition
+            className="fixed inset-0 z-50 overflow-hidden "
             show={isMenuOpen}
-            enter="transition-all ease-in-out duration-100"
+            enter="transition ease-out duration-500 transform "
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="transition-all ease-in-out duration-300"
+            leave="transition ease-out duration-600 transform"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="absolute lg:hidden">
-              <div className="fixed inset-x-0 top-0 z-50  min-w-full rounded bg-neutral-900 ">
-                <div className=" mt-7 flex items-center justify-between">
-                  <div className="ml-10 flex items-baseline">
+            <div className="lg:hidden">
+              <Transition.Child
+                enter="transition duration-500 ease-in-out"
+                enterFrom="transform translate-y-full"
+                enterTo="transform translate-y-0"
+                leave="transition duration-500 ease-in-out"
+                leaveFrom="transform translate-y-0"
+                leaveTo="transform translate-y-full"
+                as="div"
+                className="absolute max-w-full rounded bg-neutral-900 "
+              >
+                <div className="mr-5 ml-9 mt-6 flex items-center justify-between">
+                  <div className="flex items-baseline">
                     <div className="mr-[2px] mb-1.5 h-3 w-3 rounded-full bg-white" />
                     <a href="/" className="text-3xl font-bold text-white ">
                       <h1>trace</h1>
                     </a>
                   </div>
-                  <div className="mx-4">
-                    <button
-                      aria-label="Close Menu"
-                      className="text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
-                      onClick={() => {
-                        setIsMenuOpen(false)
-                      }}
+                  <button
+                    aria-label="Close Menu"
+                    className="mt-2 mr-1 text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                    }}
+                  >
+                    <svg
+                      className=" h-12 w-12"
+                      strokeWidth={1.4}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        className=" h-12 w-12"
-                        strokeWidth={1.4}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      <path
+                        d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <nav className="mx-2 h-screen w-screen">
                   <ul className="mx-8 mt-20 space-y-10 text-white">
@@ -136,12 +144,12 @@ const Navbar: React.FunctionComponent = () => {
                         Pricing
                       </a>
                     </li>
-                    <button className="mt-12 rounded-lg bg-blue-600 px-20 py-4 text-xl font-medium text-white hover:bg-blue-500 focus:outline-none ">
+                    <button className="w-52 rounded-lg bg-blue-600 px-4 py-4 text-xl font-medium text-white hover:bg-blue-500 focus:outline-none ">
                       Sign up for Free
                     </button>
                   </ul>
                 </nav>
-              </div>
+              </Transition.Child>
             </div>
           </Transition>
           {/* button to close the mobile menu  */}

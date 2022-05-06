@@ -9,7 +9,7 @@ const BodyStyles = [
 const Header: React.FunctionComponent = () => {
   return (
     <div className={BodyStyles}>
-      <div className="relative mx-8 mt-24 max-w-2xl text-center lg:mx-0 lg:max-w-5xl ">
+      <div className=" mx-8 mt-24 max-w-2xl text-center lg:mx-0 lg:max-w-5xl ">
         <h1 className="text-4xl font-bold leading-tight text-white md:text-[80px] md:leading-[86px]">
           Organize, Track and Get Reminder of your job applications
         </h1>

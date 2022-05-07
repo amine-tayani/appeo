@@ -1,5 +1,6 @@
 import { Transition } from '@headlessui/react'
 import * as React from 'react'
+import LogoIcon from '../icons/LogoIcon'
 import NavPopover from './NavPopover'
 
 const Navbar: React.FunctionComponent = () => {
@@ -8,10 +9,9 @@ const Navbar: React.FunctionComponent = () => {
   return (
     <nav className="mt-4 px-2 py-2.5 ">
       <div className="container mx-auto  flex flex-wrap items-center justify-between">
-        <div className="ml-8 flex items-baseline">
-          <div className="mr-[2px] mb-1.5 h-3 w-3 rounded-full bg-white" />
+        <div className="ml-8">
           <a href="/" className="text-3xl font-bold text-white ">
-            <h1>trace</h1>
+            <LogoIcon />
           </a>
         </div>
         <div className="flex md:order-2">
@@ -80,12 +80,9 @@ const Navbar: React.FunctionComponent = () => {
                 className="absolute max-w-full rounded bg-neutral-900 "
               >
                 <div className="mr-5 ml-9 mt-6 flex items-center justify-between">
-                  <div className="flex items-baseline">
-                    <div className="mr-[2px] mb-1.5 h-3 w-3 rounded-full bg-white" />
-                    <a href="/" className="text-3xl font-bold text-white ">
-                      <h1>trace</h1>
-                    </a>
-                  </div>
+                  <a href="/" className="text-3xl font-bold text-white ">
+                    <LogoIcon />
+                  </a>
                   <button
                     aria-label="Close Menu"
                     className="mt-2 mr-1 text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"

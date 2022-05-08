@@ -1,15 +1,93 @@
-import { Transition } from '@headlessui/react'
+import { motion } from 'framer-motion'
 import * as React from 'react'
 import LogoIcon from '../icons/LogoIcon'
 import NavPopover from './NavPopover'
 
+const mobile_nav_items = [
+  {
+    id: 0,
+    navTitle: 'Features',
+  },
+  {
+    id: 1,
+    navTitle: 'Blog',
+  },
+  {
+    id: 2,
+    navTitle: 'Support',
+  },
+  {
+    id: 3,
+    navTitle: 'Pricing',
+  },
+]
+
 const Navbar: React.FunctionComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const ulVariant = {
+    opened: {
+      transition: {
+        delayChildren: 1,
+        staggerChildren: 0.18,
+      },
+    },
+    closed: {
+      transition: {
+        staggerChildren: 0.06,
+        staggerDirection: -1,
+      },
+    },
+  }
+  const liVariant = {
+    opened: {
+      opacity: 1,
+      y: '0%',
+      transition: {
+        duration: 0.65,
+        ease: 'easeOut',
+      },
+    },
+    closed: {
+      opacity: 0,
+      y: '100%',
+      transition: {
+        duration: 0.25,
+        ease: 'easeInOut',
+      },
+    },
+  }
 
+  const mobileMenuVariant = {
+    opened: {
+      y: '0%',
+      transition: {
+        delay: 0.15,
+        duration: 1.1,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+    closed: {
+      y: '-100%',
+      transition: {
+        delay: 0.35,
+        duration: 0.63,
+        ease: [0.74, 0, 0.19, 1.02],
+      },
+    },
+  }
+  const fadeInVariant = {
+    opened: {
+      opacity: 1,
+      transition: {
+        delay: 1.2,
+      },
+    },
+    closed: { opacity: 0 },
+  }
   return (
     <nav className="mt-4 px-2 py-2.5 ">
-      <div className="container mx-auto  flex flex-wrap items-center justify-between">
-        <div className="ml-8">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <div className="ml-10 mt-4 md:mt-0 md:ml-8">
           <a href="/" className="text-3xl font-bold text-white ">
             <LogoIcon />
           </a>
@@ -23,134 +101,102 @@ const Navbar: React.FunctionComponent = () => {
               Start Free
             </button>
           </div>
-          <button
+          <motion.button
+            variants={fadeInVariant}
             aria-label="Open Menu"
             onClick={() => {
               setIsMenuOpen(true)
             }}
-            className="inline-flex items-center rounded-lg py-3 px-4 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
+            className="mr-8 mt-4 inline-flex items-center rounded-lg py-3 px-4 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:mr-0 md:mt-0 md:hidden"
           >
             {/* button to open the mobile menu  */}
             <svg
               className="h-8 w-8 rotate-180 transform "
-              strokeWidth={1.4}
+              strokeWidth={1.2}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
+              <motion.path
                 d="M3 5H11"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <path
+              <motion.path
                 d="M3 12H16"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <path
+              <motion.path
                 d="M3 19H21"
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
-          <Transition
-            className="fixed inset-0 z-50 overflow-hidden "
-            show={isMenuOpen}
-            enter="transition ease-out duration-500 transform "
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition ease-out duration-600 transform"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+          </motion.button>
+
+          <motion.div
+            className="fixed inset-0 z-50 max-w-full overflow-hidden bg-neutral-800  lg:hidden"
+            initial="closed"
+            variants={mobileMenuVariant}
+            animate={isMenuOpen ? 'opened' : 'closed'}
           >
-            <div className="lg:hidden">
-              <Transition.Child
-                enter="transition duration-500 ease-in-out"
-                enterFrom="transform translate-y-full"
-                enterTo="transform translate-y-0"
-                leave="transition duration-500 ease-in-out"
-                leaveFrom="transform translate-y-0"
-                leaveTo="transform translate-y-full"
-                as="div"
-                className="absolute max-w-full rounded bg-neutral-900 "
+            <div className="mx-12 mt-12 flex items-center justify-between">
+              <motion.a
+                variants={fadeInVariant}
+                href="/"
+                className="text-3xl font-bold text-white "
               >
-                <div className="mr-5 ml-9 mt-6 flex items-center justify-between">
-                  <a href="/" className="text-3xl font-bold text-white ">
-                    <LogoIcon />
-                  </a>
-                  <button
-                    aria-label="Close Menu"
-                    className="mt-2 mr-1 text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
-                    onClick={() => {
-                      setIsMenuOpen(false)
-                    }}
-                  >
-                    <svg
-                      className=" h-12 w-12"
-                      strokeWidth={1.4}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <nav className="mx-2 h-screen w-screen">
-                  <ul className="mx-8 mt-20 space-y-10 text-white">
-                    <li>
-                      <a
-                        href="/"
-                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
-                      >
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
-                      >
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
-                      >
-                        Support
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        title="About us"
-                        className="text-3xl font-bold tracking-wide hover:text-blue-500  "
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                    <button className="w-52 rounded-lg bg-blue-600 px-4 py-4 text-xl font-medium text-white hover:bg-blue-500 focus:outline-none ">
-                      Sign up for Free
-                    </button>
-                  </ul>
-                </nav>
-              </Transition.Child>
+                <LogoIcon />
+              </motion.a>
+              <motion.button
+                variants={fadeInVariant}
+                aria-label="Close Menu"
+                className=" text-neutral-500 hover:text-neutral-100 focus:outline-none md:hidden"
+                onClick={() => {
+                  setIsMenuOpen(false)
+                }}
+              >
+                <svg
+                  className=" h-10 w-10"
+                  strokeWidth={1}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </motion.button>
             </div>
-          </Transition>
-          {/* button to close the mobile menu  */}
+            <nav className="mx-2 h-screen w-screen">
+              <motion.ul
+                variants={ulVariant}
+                className="mx-12 mt-32 space-y-16 text-neutral-400"
+              >
+                {mobile_nav_items.map((item) => (
+                  <motion.li key={item.id} whileHover={{ scale: 0.9 }}>
+                    <motion.a
+                      variants={liVariant}
+                      href="/"
+                      className="text-3xl font-medium hover:text-white  "
+                    >
+                      {item.navTitle}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </nav>
+          </motion.div>
         </div>
+        {/* widescreen navigation bar */}
         <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-16 ">
             <li>

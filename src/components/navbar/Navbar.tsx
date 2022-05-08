@@ -139,7 +139,7 @@ const Navbar: React.FunctionComponent = () => {
           </motion.button>
 
           <motion.div
-            className="fixed inset-0 z-50 max-w-full overflow-hidden bg-neutral-800  lg:hidden"
+            className="fixed inset-0 z-50 max-w-full overflow-hidden bg-neutral-900  lg:hidden"
             initial="closed"
             variants={mobileMenuVariant}
             animate={isMenuOpen ? 'opened' : 'closed'}
@@ -179,7 +179,7 @@ const Navbar: React.FunctionComponent = () => {
             <nav className="mx-2 h-screen w-screen">
               <motion.ul
                 variants={ulVariant}
-                className="mx-12 mt-32 space-y-16 text-neutral-400"
+                className="mx-12 mt-20 space-y-16 text-neutral-100"
               >
                 {mobile_nav_items.map((item) => (
                   <motion.li key={item.id} whileHover={{ scale: 0.9 }}>

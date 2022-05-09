@@ -107,7 +107,7 @@ const Navbar: React.FunctionComponent = () => {
             onClick={() => {
               setIsMenuOpen(true)
             }}
-            className="mr-8 mt-4 inline-flex items-center rounded-lg py-3 px-4 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:mr-0 md:mt-0 md:hidden"
+            className=" mt-4 inline-flex items-center rounded-lg py-3 px-4 text-sm text-neutral-500 hover:text-neutral-100 focus:outline-none md:mr-0 md:mt-0 md:hidden"
           >
             {/* button to open the mobile menu  */}
             <svg
@@ -198,7 +198,7 @@ const Navbar: React.FunctionComponent = () => {
         </div>
         {/* widescreen navigation bar */}
         <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
-          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-16 ">
+          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 lg:space-x-16  ">
             <li>
               <NavPopover />
             </li>

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 const Comment: React.FunctionComponent = () => {
   return (
-    <div className="p-2 md:w-[400px]">
+    <div className="p-2 sm:w-[430px] sm:p-3 md:w-[400px]">
       <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
         <div className="p-8">
           <div className="flex justify-between space-x-4">

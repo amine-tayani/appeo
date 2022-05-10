@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const LogoIcon: React.FunctionComponent = () => {
+const LogoIcon: React.FC = () => {
   return (
     <svg
       className="w-28"

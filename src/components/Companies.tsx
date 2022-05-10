@@ -6,7 +6,7 @@ const Companies: React.FunctionComponent = () => {
       <div className="container mx-auto max-w-6xl px-5 py-24">
         <div className="mx-auto my-10 text-center">
           <p className=" mx-12 leading-loose text-neutral-400 md:mx-0 md:text-xl md:leading-none">
-            BIG COMPANIES THAT USE TRACE ON DAILY BASIS
+            BIG COMPANIES THAT USE APPEO ON DAILY BASIS
           </p>
           <div className="mx-4 mt-10 mb-0 grid grid-cols-2 place-items-center items-center justify-center gap-x-4 gap-y-4 sm:mx-20 sm:grid-cols-3 md:mt-20 lg:mb-4 lg:mr-0 lg:ml-0 lg:flex lg:gap-0 lg:space-x-20">
             <div>

@@ -7,7 +7,7 @@ const CommentList: React.FunctionComponent = () => {
       <div className="container mx-auto px-5 py-24">
         <div className="mx-auto mt-40 max-w-3xl text-center">
           <h1 className="mt-8 mb-4 text-5xl font-bold leading-snug text-white">
-            People love using Trace
+            People love using Appeo
           </h1>
           <p className=" text-xl text-neutral-400 ">
             Here are some nice comments our users said about us

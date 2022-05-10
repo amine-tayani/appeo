@@ -16,8 +16,8 @@ const Header: React.FunctionComponent = () => {
       </div>
       <div className="max-w-xl px-12 text-center sm:px-16 md:max-w-3xl">
         <p className="mt-12 text-neutral-400 sm:text-xl ">
-          Make your job search less stressful with the help of smart and
-          specialized job application tracker app
+          Manage potential employers and their lists of requirements, as well as
+          track the status of your applications.
         </p>
       </div>
       <button className="mt-12 rounded-lg bg-blue-600 px-12 py-4 font-medium text-white hover:bg-blue-500 focus:outline-none ">

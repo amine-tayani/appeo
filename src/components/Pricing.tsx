@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { motion, Variants } from 'framer-motion'
 
 const Pricing: React.FunctionComponent = () => {
   return (
@@ -16,8 +17,11 @@ const Pricing: React.FunctionComponent = () => {
         <section className="">
           <div className="container mx-auto px-5 py-24">
             <div className=" flex flex-col flex-wrap justify-center lg:flex-row">
-              <div className="p-4 md:px-20 md:py-8 lg:w-1/3 lg:px-4 lg:py-4">
-                <div className="h-full  overflow-hidden rounded-xl bg-neutral-800">
+              <div className="p-4 md:px-20 md:py-8 lg:w-1/3 lg:px-4 lg:py-4 xl:px-10">
+                <motion.div
+                  whileHover={{ scale: 1.1, cursor: 'grab' }}
+                  className="h-full overflow-hidden rounded-xl bg-neutral-800"
+                >
                   <div className="p-10">
                     <h2 className=" mb-3 font-medium text-neutral-400">
                       PERSONAL
@@ -31,9 +35,12 @@ const Pricing: React.FunctionComponent = () => {
                       <li>Collab mode</li>
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </div>
-              <div className="p-4 md:px-16 lg:w-1/3 lg:px-0 lg:py-0">
+              <motion.div
+                whileHover={{ scale: 1.1, cursor: 'grab' }}
+                className="p-4 md:px-16 lg:w-1/3 lg:px-0 lg:py-0 xl:px-4"
+              >
                 <div className="h-full overflow-hidden rounded-xl bg-blue-600 text-white ">
                   <div className="mt-4 p-10">
                     <h2 className=" mb-3 font-medium">PRO 1 YEAR</h2>
@@ -45,8 +52,11 @@ const Pricing: React.FunctionComponent = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
-              <div className="p-4 md:px-20 md:py-8 lg:w-1/3 lg:px-4 lg:py-4">
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.1, cursor: 'grab' }}
+                className="p-4 md:px-20 md:py-8 lg:w-1/3 lg:px-4 lg:py-4 xl:px-6"
+              >
                 <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
                   <div className="p-10">
                     <h2 className=" mb-3 font-medium text-neutral-400">
@@ -62,7 +72,7 @@ const Pricing: React.FunctionComponent = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

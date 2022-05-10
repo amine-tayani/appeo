@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { motion, Variants } from 'framer-motion'
 import CuttingScissorIcon from './icons/CuttingScissorIcon'
 import GroupIcon from './icons/GroupIcon'
 import HalfMoonIcon from './icons/HalfMoonIcon'
@@ -7,8 +8,23 @@ import ThunderStormIcon from './icons/ThunderStormIcon'
 import WifiOffIcon from './icons/WifiOffIcon'
 
 const Features: React.FunctionComponent = () => {
+  const cardVariants: Variants = {
+    offscreen: {
+      y: 900,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        duration: 1.2,
+        stiffness: 40,
+      },
+    },
+  }
   return (
-    <section className="body-font text-gray-600">
+    <motion.section className="body-font text-gray-600">
       <div className="container mx-auto px-5 md:py-24">
         <div className="mx-auto max-w-3xl text-center md:mt-40">
           <p className=" text-xl text-neutral-400 ">WHO IS THIS APP FOR ?</p>
@@ -16,8 +32,14 @@ const Features: React.FunctionComponent = () => {
             Appeo is suitable for Job seekers who want to land a job
           </h1>
         </div>
-        <div className=" flex flex-wrap justify-center lg:space-x-6">
-          <div className="p-4 sm:w-[400px] md:w-[400px]">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ staggerChildren: 0.5 }}
+          className=" flex flex-wrap justify-center lg:space-x-6"
+        >
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px] ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -32,8 +54,8 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="p-4 sm:w-[400px] md:w-[400px] ">
+          </motion.div>
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px]  ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -47,8 +69,8 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="p-4 sm:w-[400px] md:w-[400px]">
+          </motion.div>
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px] ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -63,10 +85,16 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <div className=" flex flex-wrap justify-center lg:mt-6 lg:space-x-6">
-          <div className="p-4 sm:w-[400px] md:w-[400px]">
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ staggerChildren: 0.5 }}
+          className=" flex flex-wrap justify-center lg:mt-6 lg:space-x-6"
+        >
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px] ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -80,8 +108,8 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="p-4 sm:w-[400px] md:w-[400px]">
+          </motion.div>
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px] ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -96,8 +124,8 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="p-4 sm:w-[400px] md:w-[400px]">
+          </motion.div>
+          <motion.div variants={cardVariants} className="p-4 sm:w-[400px] ">
             <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
               <div className="p-10">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-700">
@@ -111,10 +139,10 @@ const Features: React.FunctionComponent = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

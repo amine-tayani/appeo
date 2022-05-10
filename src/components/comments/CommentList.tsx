@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { motion } from 'framer-motion'
 import Comment from './Comment'
 
 const CommentList: React.FunctionComponent = () => {
@@ -13,14 +14,20 @@ const CommentList: React.FunctionComponent = () => {
             Here are some nice comments our users said about us
           </p>
         </div>
-        <div className=" mt-10 flex flex-wrap justify-center">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ staggerChildren: 0.5 }}
+          className=" mt-10 flex flex-wrap justify-center"
+        >
           <Comment />
           <Comment />
           <Comment />
           <Comment />
           <Comment />
           <Comment />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

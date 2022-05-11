@@ -1,27 +1,8 @@
 import * as React from 'react'
-import { motion, Variants } from 'framer-motion'
 
 const Comment: React.FunctionComponent = () => {
-  const cardVariants: Variants = {
-    offscreen: {
-      y: 900,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        duration: 1.2,
-        stiffness: 40,
-      },
-    },
-  }
   return (
-    <motion.div
-      variants={cardVariants}
-      className="p-2 sm:w-[430px] sm:p-3 md:w-[400px]"
-    >
+    <div className="p-2 sm:w-[430px] sm:p-3 md:w-[400px]">
       <div className="h-full overflow-hidden rounded-xl bg-neutral-800">
         <div className="p-8">
           <div className="flex justify-between space-x-4">
@@ -60,7 +41,7 @@ const Comment: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

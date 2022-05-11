@@ -14,20 +14,14 @@ const CommentList: React.FunctionComponent = () => {
             Here are some nice comments our users said about us
           </p>
         </div>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ staggerChildren: 0.5 }}
-          className=" mt-10 flex flex-wrap justify-center"
-        >
+        <div className=" mt-10 flex flex-wrap justify-center">
           <Comment />
           <Comment />
           <Comment />
           <Comment />
           <Comment />
           <Comment />
-        </motion.div>
+        </div>
       </div>
     </section>
   )

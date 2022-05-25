@@ -1,10 +1,10 @@
 import * as React from 'react'
-import CuttingScissorIcon from './icons/CuttingScissorIcon'
-import GroupIcon from './icons/GroupIcon'
-import HalfMoonIcon from './icons/HalfMoonIcon'
-import SuitCaseIcon from './icons/SuitCaseIcon'
-import ThunderStormIcon from './icons/ThunderStormIcon'
-import WifiOffIcon from './icons/WifiOffIcon'
+import CuttingScissorIcon from '../icons/CuttingScissorIcon'
+import GroupIcon from '../icons/GroupIcon'
+import HalfMoonIcon from '../icons/HalfMoonIcon'
+import SuitCaseIcon from '../icons/SuitCaseIcon'
+import ThunderStormIcon from '../icons/ThunderStormIcon'
+import WifiOffIcon from '../icons/WifiOffIcon'
 
 const Features: React.FunctionComponent = () => {
   return (

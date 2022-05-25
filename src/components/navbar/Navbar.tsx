@@ -94,12 +94,12 @@ const Navbar: React.FunctionComponent = () => {
         </div>
         <div className="flex md:order-2">
           <div className="mr-12 hidden items-center space-x-10 md:flex ">
-            <button
-              type="button"
+            <a
+              href="/signup"
               className="rounded-lg bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-500 focus:outline-none"
             >
               Start Free
-            </button>
+            </a>
           </div>
           <motion.button
             variants={fadeInVariant}

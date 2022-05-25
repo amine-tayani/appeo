@@ -1,14 +1,14 @@
 import * as React from 'react'
 import Navbar from '@/components/navbar/Navbar'
-import Header from '@/components/Header'
-import Features from '@/components/Features'
-import Sections from '@/components/Sections'
-import CommentList from '@/components/comments/CommentList'
-import Companies from '@/components/Companies'
-import Pricing from '@/components/Pricing'
-import Footer from '@/components/Footer'
+import Header from '@/components/landing/Header'
+import Features from '@/components/landing/Features'
+import Sections from '@/components/landing/Sections'
+import CommentList from '@/components/landing/comments/CommentList'
+import Companies from '@/components/landing/Companies'
+import Pricing from '@/components/landing/Pricing'
+import Footer from '@/components/landing/Footer'
 
-const IndexPage = () => {
+const HomePage = () => {
   return (
     <React.Fragment>
       <Navbar />
@@ -23,4 +23,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default HomePage

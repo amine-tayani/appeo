@@ -20,9 +20,12 @@ const Header: React.FunctionComponent = () => {
           track the status of your applications.
         </p>
       </div>
-      <button className="mt-12 rounded-lg bg-blue-600 px-12 py-4 font-medium text-white hover:bg-blue-500 focus:outline-none ">
+      <a
+        href="/signup"
+        className="mt-12 rounded-lg bg-blue-600 px-12 py-4 font-medium text-white hover:bg-blue-500 focus:outline-none "
+      >
         Sign up for Free
-      </button>
+      </a>
     </div>
   )
 }

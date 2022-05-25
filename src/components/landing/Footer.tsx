@@ -1,5 +1,5 @@
 import * as React from 'react'
-import LogoIcon from './icons/LogoIcon'
+import LogoIcon from '../icons/LogoIcon'
 
 const Footer: React.FunctionComponent = () => {
   return (

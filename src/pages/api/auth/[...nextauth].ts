@@ -1,8 +1,8 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import LinkedInProvider from 'next-auth/providers/linkedin'
+import IndeedProvider from '@/services/providers/indeed'
 
-const options = {
+export default NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -15,9 +15,9 @@ const options = {
         },
       },
     }),
-    LinkedInProvider({
-      clientId: process.env.LINKEDIN_CLIENT_ID,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+    IndeedProvider({
+      clientId: process.env.INDEED_CLIENT_ID,
+      clientSecret: process.env.INDEED_CLIENT_SECRET,
       authorization: {
         params: {
           prompt: 'consent',
@@ -29,6 +29,4 @@ const options = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   debug: true,
-}
-
-export default (req, res) => NextAuth(req, res, options)
+})

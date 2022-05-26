@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { getSession } from 'next-auth/react'
 import AuthNav from '@/components/navbar/AuthNav'
 import SearchContainer from '@/components/applications/SearchContainer'
 import Card from '@/components/applications/Card'
@@ -25,7 +26,7 @@ const ApplicationsIndexPage = () => {
     {
       company: 'Google',
       title: 'Full Stack Developer',
-      icon: <GoogleIcon />,
+      icon: <GoogleIcon width="50" />,
       location: 'California',
     },
     {
@@ -54,8 +55,8 @@ const ApplicationsIndexPage = () => {
             </p>
           </div>
           <div className="mx-8 mt-12 flex flex-wrap space-x-6 overflow-hidden">
-            {apps.map((e) => (
-              <Card {...e} />
+            {apps.map((e, index) => (
+              <Card {...e} key={index} />
             ))}
           </div>
         </div>
@@ -65,3 +66,20 @@ const ApplicationsIndexPage = () => {
 }
 
 export default ApplicationsIndexPage
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { session },
+  }
+}

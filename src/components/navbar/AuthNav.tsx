@@ -3,6 +3,7 @@ import { useSession, signOut } from 'next-auth/react'
 import { Popover } from '@headlessui/react'
 import { motion } from 'framer-motion'
 import LogoIcon from '../icons/LogoIcon'
+import UserAvatarIcon from '../icons/UserAvatarIcon'
 
 const AuthNav = () => {
   const { data: session } = useSession()
@@ -30,34 +31,11 @@ const AuthNav = () => {
                     src={session.user.image}
                   />
                 ) : (
-                  <svg
-                    className="h-12 w-12"
-                    viewBox="0 0 24 24"
-                    fill="#525252"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457"
-                      stroke="#a3a3a3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z"
-                      stroke="#a3a3a3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <UserAvatarIcon />
                 )}
               </Popover.Button>
 
-              <Popover.Panel className="mt-2text-white absolute right-0 z-10">
+              <Popover.Panel className="absolute right-0 z-10 mt-2 text-white">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{
@@ -68,25 +46,28 @@ const AuthNav = () => {
                       damping: 20,
                     },
                   }}
-                  className=" w-[200px] overflow-hidden rounded-lg bg-neutral-700 p-4"
+                  className=" w-[220px] overflow-hidden rounded-lg bg-neutral-700 shadow-xl"
                 >
                   {session && (
-                    <div className="mx-3 flex items-center space-x-4">
+                    <div className="ml-6 mt-4 flex items-center space-x-2">
                       <img
                         className=" h-10 w-10 cursor-pointer rounded-full"
                         src={session.user.image}
                       />
-                      <span className=" font-medium text-white">
+                      <span className=" font-medium capitalize text-neutral-100">
                         {session.user.name}
                       </span>
                     </div>
                   )}
 
-                  <ul className="space-y-2 py-3" aria-labelledby="dropdown">
+                  <ul
+                    className="mt-4 space-y-1 border-t border-[#4b4a4a] py-3"
+                    aria-labelledby="dropdown"
+                  >
                     <li>
                       <a
                         href="#"
-                        className="block rounded-lg py-2 px-4 text-sm text-neutral-200 hover:bg-neutral-600"
+                        className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
                       >
                         Dashboard
                       </a>
@@ -94,7 +75,7 @@ const AuthNav = () => {
                     <li>
                       <a
                         href="#"
-                        className="block rounded-lg py-2 px-4 text-sm text-neutral-200 hover:bg-neutral-600"
+                        className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
                       >
                         Settings
                       </a>
@@ -102,7 +83,7 @@ const AuthNav = () => {
                     <li>
                       <a
                         href="#"
-                        className="block rounded-lg py-2 px-4 text-sm text-neutral-200 hover:bg-neutral-600"
+                        className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
                       >
                         Earnings
                       </a>
@@ -111,7 +92,7 @@ const AuthNav = () => {
                       <li>
                         <button
                           onClick={handleSignOutAction}
-                          className="w-full rounded-lg py-2 px-4 text-left text-sm text-neutral-200 hover:bg-neutral-600"
+                          className="mx-4 w-[190px] rounded-lg py-2 px-4 text-left text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
                         >
                           Sign out
                         </button>
@@ -120,7 +101,7 @@ const AuthNav = () => {
                       <li>
                         <a
                           href="/login"
-                          className="block rounded-lg py-2 px-4 text-sm text-neutral-200 hover:bg-neutral-600"
+                          className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
                         >
                           Sign in
                         </a>

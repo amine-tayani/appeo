@@ -1,10 +1,13 @@
 import * as React from 'react'
 
-const GoogleIcon: React.FunctionComponent = () => {
+interface Props {
+  width?: string
+}
+
+const GoogleIcon: React.FunctionComponent<Props> = ({ width }) => {
   return (
     <svg
-      width="57"
-      height="58"
+      width={width}
       viewBox="0 0 57 58"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

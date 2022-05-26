@@ -1,10 +1,11 @@
 import * as React from 'react'
+import { getSession } from 'next-auth/react'
+import { ApplicationProps } from '@/types/step'
 import AuthNav from '@/components/navbar/AuthNav'
 import List from '@/components/applications/List'
 import TwitchIcon from '@/components/icons/TwitchIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
 import TwitterIcon from '@/components/icons/TwitterIcon'
-import { ApplicationProps } from '@/types/step'
 
 const ApplicationsListPage = () => {
   const [apps] = React.useState<ApplicationProps[]>([
@@ -23,7 +24,7 @@ const ApplicationsListPage = () => {
     {
       company: 'Google',
       title: 'Full Stack Developer',
-      icon: <GoogleIcon />,
+      icon: <GoogleIcon width="60" />,
       location: 'California',
     },
   ])
@@ -58,3 +59,20 @@ const ApplicationsListPage = () => {
 }
 
 export default ApplicationsListPage
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { session },
+  }
+}

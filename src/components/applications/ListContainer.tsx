@@ -23,7 +23,7 @@ const ListContainer: React.FunctionComponent = () => {
       />
       <Container
         company="Google"
-        icon={<GoogleIcon />}
+        icon={<GoogleIcon width="60" />}
         title="Frontend Engineer"
         location="Austin"
       />

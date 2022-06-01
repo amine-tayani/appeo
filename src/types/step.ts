@@ -1,8 +1,4 @@
-export enum StepStatus {
-  PASSED = 'PASSED',
-  FAILED = 'FAILED',
-  WAITING = 'WAITING',
-}
+import * as React from 'react'
 
 export interface IconProps {
   sw: number
@@ -17,11 +13,25 @@ export interface ApplicationProps {
   location: string
   icon: React.ReactElement
 }
+export interface StepperProps {
+  steps: Step[]
+}
+
+export interface Step {
+  title: string
+  element: (stepProps: StepProps) => JSX.Element
+}
 
 export interface StepProps {
-  icon: React.ReactElement
-  status: StepStatus
-  isFirst?: boolean
-  label: string
-  day: string
+  goNextStep: () => void
+  goPreviousStep: () => void
+  currentStep: number
+  isLast: boolean
+  isFirst: boolean
+  step: number
+}
+
+export interface StepperProgressProps {
+  stepTitles: string[]
+  currentStep: number
 }

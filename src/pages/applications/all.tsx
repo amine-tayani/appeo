@@ -6,6 +6,7 @@ import List from '@/components/applications/List'
 import TwitchIcon from '@/components/icons/TwitchIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
 import TwitterIcon from '@/components/icons/TwitterIcon'
+import { GetServerSideProps } from 'next'
 
 const ApplicationsListPage = () => {
   const [apps] = React.useState<ApplicationProps[]>([
@@ -60,7 +61,7 @@ const ApplicationsListPage = () => {
 
 export default ApplicationsListPage
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
 
   if (!session) {

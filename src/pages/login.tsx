@@ -13,11 +13,11 @@ const LoginPage = () => {
     })
   }
 
-  const handleSignInWithIndeedAction = (
+  const handleSignInWithLinkedInAction = (
     evt: React.MouseEvent<HTMLButtonElement>
   ) => {
     evt.preventDefault()
-    signIn('indeed', {
+    signIn('linkedin', {
       callbackUrl: `${window.location.origin}/applications`,
     })
   }
@@ -44,10 +44,10 @@ const LoginPage = () => {
             </div>
             <div className="mb-6 flex flex-col">
               <button
-                onClick={handleSignInWithIndeedAction}
+                onClick={handleSignInWithLinkedInAction}
                 className="block w-full rounded-lg bg-blue-700 px-4 py-3 font-medium text-neutral-100 hover:bg-blue-600 focus:bg-blue-500"
               >
-                Continue with Indeed
+                Continue with LinkedIn
               </button>
             </div>
           </div>

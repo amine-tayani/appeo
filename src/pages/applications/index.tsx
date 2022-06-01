@@ -7,6 +7,7 @@ import { ApplicationProps } from '@/types/step'
 import TwitchIcon from '@/components/icons/TwitchIcon'
 import TwitterIcon from '@/components/icons/TwitterIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
+import { GetServerSideProps } from 'next'
 
 const ApplicationsIndexPage = () => {
   const [isNotifcations] = React.useState(true)
@@ -67,7 +68,7 @@ const ApplicationsIndexPage = () => {
 
 export default ApplicationsIndexPage
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
 
   if (!session) {

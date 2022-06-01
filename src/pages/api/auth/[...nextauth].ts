@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import IndeedProvider from '@/services/providers/indeed'
+import LinkedInProvider from 'next-auth/providers/linkedin'
 
 export default NextAuth({
   providers: [
@@ -15,9 +15,9 @@ export default NextAuth({
         },
       },
     }),
-    IndeedProvider({
-      clientId: process.env.INDEED_CLIENT_ID,
-      clientSecret: process.env.INDEED_CLIENT_SECRET,
+    LinkedInProvider({
+      clientId: process.env.LINKEDIN_CLIENT_ID,
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
       authorization: {
         params: {
           prompt: 'consent',

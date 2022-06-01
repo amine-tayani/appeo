@@ -2,6 +2,7 @@ import * as React from 'react'
 import { getSession } from 'next-auth/react'
 import AuthNav from '@/components/navbar/AuthNav'
 import ListContainer from '@/components/applications/ListContainer'
+import { GetServerSideProps } from 'next'
 
 const StatusPage = () => {
   return (
@@ -14,7 +15,7 @@ const StatusPage = () => {
 
 export default StatusPage
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
 
   if (!session) {

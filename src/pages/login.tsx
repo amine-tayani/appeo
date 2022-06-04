@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { signIn } from 'next-auth/react'
+import { getSession, signIn } from 'next-auth/react'
 import GoogleIcon from '@/components/icons/GoogleIcon'
 import AppeoIcon from '@/components/icons/AppeoIcon'
+import { GetServerSideProps } from 'next'
 
 const LoginPage = () => {
   const handleSignInWithGoogleAction = (
@@ -58,3 +59,19 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context)
+  if (session) {
+    return {
+      redirect: {
+        destination: '/applications',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { session },
+  }
+}

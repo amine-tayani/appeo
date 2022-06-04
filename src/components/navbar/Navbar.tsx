@@ -204,10 +204,10 @@ const Navbar: React.FunctionComponent = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/privacy"
                 className=" font-medium text-neutral-400 hover:text-blue-500 "
               >
-                Blog
+                Privacy
               </a>
             </li>
             <li>

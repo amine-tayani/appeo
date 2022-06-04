@@ -49,42 +49,47 @@ const AuthNav = () => {
                       damping: 20,
                     },
                   }}
-                  className=" w-[220px] overflow-hidden rounded-lg bg-neutral-700 shadow-xl"
+                  className=" w-[250px] overflow-hidden rounded-lg bg-neutral-700 shadow-xl"
                 >
                   {session && (
-                    <div className="ml-6 mt-4 flex items-center space-x-2">
+                    <div className="mx-6 mt-4 flex items-center justify-between space-x-4 py-2 ">
+                      <div>
+                        <p className="mb-1 text-sm font-semibold capitalize text-neutral-100">
+                          {session.user.name}
+                        </p>
+                        <p className="text-xs text-neutral-300">
+                          {session.user.email}
+                        </p>
+                      </div>
                       <img
                         className=" h-10 w-10 cursor-pointer rounded-full"
                         src={session.user.image}
                       />
-                      <span className=" font-medium capitalize text-neutral-100">
-                        {session.user.name}
-                      </span>
                     </div>
                   )}
 
                   <ul
-                    className="mt-4 space-y-1 border-t border-[#4b4a4a] py-3"
+                    className="mt-4 space-y-1 border-t border-[#4b4a4a] py-3 "
                     aria-labelledby="dropdown"
                   >
                     <li>
                       <Link href={`/profile/${session?.user.name}`}>
-                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100">
+                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-300 hover:bg-neutral-600 hover:text-neutral-100">
                           Profile
                         </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="#">
-                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100">
+                      <Link href={`/dashboard/${session?.user.name}`}>
+                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-300 hover:bg-neutral-600 hover:text-neutral-100">
                           Dashboard
                         </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="#">
-                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100">
-                          Settings
+                      <Link href={`/settings/${session?.user.name}`}>
+                        <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-300 hover:bg-neutral-600 hover:text-neutral-100">
+                          Security & Login
                         </a>
                       </Link>
                     </li>
@@ -93,7 +98,7 @@ const AuthNav = () => {
                       <li>
                         <button
                           onClick={handleSignOutAction}
-                          className="mx-4 w-[190px] rounded-lg py-2 px-4 text-left text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100"
+                          className="mx-4 w-[190px] rounded-lg py-2 px-4 text-left text-sm text-zinc-300 hover:bg-neutral-600 hover:text-neutral-100"
                         >
                           Sign out
                         </button>
@@ -101,7 +106,7 @@ const AuthNav = () => {
                     ) : (
                       <li>
                         <Link href="/login">
-                          <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-400 hover:bg-neutral-600 hover:text-neutral-100">
+                          <a className="mx-4 block rounded-lg py-2 px-4 text-sm text-zinc-300 hover:bg-neutral-600 hover:text-neutral-100">
                             Sign in
                           </a>
                         </Link>

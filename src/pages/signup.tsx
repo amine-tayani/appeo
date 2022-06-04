@@ -1,6 +1,24 @@
 import AppeoIcon from '@/components/icons/AppeoIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
+import { GetServerSideProps } from 'next'
+import { getSession } from 'next-auth/react'
 import * as React from 'react'
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context)
+  if (session) {
+    return {
+      redirect: {
+        destination: '/applications',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { session },
+  }
+}
 
 const SignupPage = () => {
   return (

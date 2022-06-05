@@ -21,7 +21,7 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/tests/*": ["src/__tests__/*"],
       "@/utils/*": ["src/utils/*"],
-      "@/services/*": ["src/services/*"],
+      "@/lib/*": ["src/lib/*"],
       "@/types/*": ["src/types/*"],
       "@/css/*": ["css/*"]
     }

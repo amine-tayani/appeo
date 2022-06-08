@@ -1,26 +1,26 @@
+import * as React from 'react'
+import { signIn } from 'next-auth/react'
 import AppeoIcon from '@/components/icons/AppeoIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
-import { GetServerSideProps } from 'next'
-import { getSession } from 'next-auth/react'
-import * as React from 'react'
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context)
-  if (session) {
-    return {
-      redirect: {
-        destination: '/applications',
-        permanent: false,
-      },
-    }
-  }
-
-  return {
-    props: { session },
-  }
-}
 
 const SignupPage = () => {
+  const handleSignUpWithGoogleAction = (
+    evt: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    evt.preventDefault()
+    signIn('google', {
+      callbackUrl: `${window.location.origin}/welcome`,
+    })
+  }
+
+  const handleSignUpWithLinkedInAction = (
+    evt: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    evt.preventDefault()
+    signIn('linkedin', {
+      callbackUrl: `${window.location.origin}/welcome`,
+    })
+  }
   return (
     <React.Fragment>
       <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-800">
@@ -32,6 +32,7 @@ const SignupPage = () => {
           <div className="mt-10">
             <div className="mb-6 flex flex-col">
               <button
+                onClick={handleSignUpWithGoogleAction}
                 type="button"
                 className="block w-full rounded-lg bg-neutral-100 px-4 py-3 font-medium text-neutral-600"
               >
@@ -43,10 +44,11 @@ const SignupPage = () => {
             </div>
             <div className="mb-6 flex flex-col">
               <button
+                onClick={handleSignUpWithLinkedInAction}
                 type="button"
                 className="block w-full rounded-lg bg-blue-700 px-4 py-3 font-medium text-white hover:bg-blue-600 focus:bg-blue-500"
               >
-                Continue with Indeed
+                Continue with Linkedin
               </button>
             </div>
           </div>

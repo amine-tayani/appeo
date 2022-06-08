@@ -1,6 +1,6 @@
-import { ApplicationProps } from '@/types/step'
-import moment from 'moment'
 import * as React from 'react'
+import { formatDistance, subDays } from 'date-fns'
+import { ApplicationProps } from '@/types/step'
 import Application from './Application'
 
 const Card: React.FunctionComponent<ApplicationProps> = (props) => {
@@ -9,7 +9,10 @@ const Card: React.FunctionComponent<ApplicationProps> = (props) => {
       <Application {...props} />
       <div className="mx-4 mt-4 flex max-w-sm items-center justify-between">
         <p className="text-xs text-neutral-300">
-          Applied {moment().startOf('days').fromNow()}
+          Applied{' '}
+          {formatDistance(subDays(new Date(), Math.random() * 8), new Date(), {
+            addSuffix: true,
+          })}
         </p>
         <a
           href="applications/status/"

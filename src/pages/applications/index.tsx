@@ -1,13 +1,13 @@
 import * as React from 'react'
+import { GetServerSideProps } from 'next'
 import { getSession } from 'next-auth/react'
-import AuthNav from '@/components/navbar/AuthNav'
+import { ApplicationProps } from '@/types/step'
 import SearchContainer from '@/components/applications/SearchContainer'
 import Card from '@/components/applications/Card'
-import { ApplicationProps } from '@/types/step'
+import AuthNav from '@/components/navbar/AuthNav'
 import TwitchIcon from '@/components/icons/TwitchIcon'
 import TwitterIcon from '@/components/icons/TwitterIcon'
 import GoogleIcon from '@/components/icons/GoogleIcon'
-import { GetServerSideProps } from 'next'
 
 const ApplicationsIndexPage = () => {
   const [isNotifcations] = React.useState(true)

@@ -1,9 +1,8 @@
 import * as React from 'react'
-import moment from 'moment'
 import CheckIcon from '../icons/CheckIcon'
 import Application from './Application'
-import TwitterIcon from '../icons/TwitterIcon'
 import { ApplicationProps } from '@/types/step'
+import { formatRelative, subDays } from 'date-fns'
 
 const List: React.FunctionComponent<ApplicationProps> = (props) => {
   return (
@@ -16,7 +15,7 @@ const List: React.FunctionComponent<ApplicationProps> = (props) => {
         <span> Application Accepted</span>
       </div>
       <div className="text-sm text-neutral-300">
-        Applied {moment().fromNow()}
+        Applied {formatRelative(subDays(new Date(), 0), new Date())}
       </div>
     </div>
   )

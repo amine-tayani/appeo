@@ -7,16 +7,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = getSession({ req })
-  const { username } = req.body
-  if (!session) {
-    res.status(401)
-  }
-  if (username === null) return res.status(404).send('invalid Usename')
-  const result = await prisma.user.update({
-    data: { username },
+
+  const AuthenticatedUser = await prisma.user.findUnique({
     where: {
-      id: session?.userId,
+      email: (await session).user?.email,
     },
+    include: { Account: true, Session: true },
   })
-  res.status(200).json(result)
+  if (AuthenticatedUser)
+    res.status(200).json(JSON.stringify(AuthenticatedUser, null, 2))
 }

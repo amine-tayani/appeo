@@ -6,7 +6,6 @@ import { getSession, useSession } from 'next-auth/react'
 import AuthNav from '@/components/navbar/AuthNav'
 import CancelIcon from '@/components/icons/CancelIcon'
 import CheckIcon from '@/components/icons/CheckIcon'
-import Clsx from 'clsx'
 
 const Dashboard = () => {
   const activities = [

@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = getSession({ req })
-  const { username } = req.body
+  const { username, email } = req.body
   if (!session) {
     res.status(401)
   }
@@ -15,7 +15,7 @@ export default async function handler(
   const result = await prisma.user.update({
     data: { username },
     where: {
-      id: session?.userId,
+      email: (await session).user.email,
     },
   })
   res.status(200).json(result)

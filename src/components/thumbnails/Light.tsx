@@ -35,17 +35,6 @@ const LightThumb: React.FunctionComponent = () => {
       <rect x="62" y="141" width="90" height="9" rx="4.5" fill="#E2E8F0" />
       <rect x="27" y="191" width="126" height="9" rx="4.5" fill="#E2E8F0" />
       <rect x="27" y="208" width="90" height="9" rx="4.5" fill="#E2E8F0" />
-      <defs>
-        <pattern
-          id="pattern0"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
-          <use transform="scale(0.0125)" />
-        </pattern>
-        <image width="80" height="80" />
-      </defs>
     </svg>
   )
 }

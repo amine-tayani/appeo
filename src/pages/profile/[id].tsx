@@ -7,8 +7,8 @@ import prisma from '@/lib/prisma'
 import AuthNav from '@/components/navbar/AuthNav'
 
 const Profile = ({ user }) => {
-  const [username, setUsername] = React.useState(user?.username || '')
-  const [email, setEmail] = React.useState(user?.email || '')
+  const [username, setUsername] = React.useState(user?.username)
+  const [email, setEmail] = React.useState(user?.email)
   const [loading, setLoading] = React.useState(false)
 
   const submitData = async (e: React.SyntheticEvent) => {
@@ -56,13 +56,13 @@ const Profile = ({ user }) => {
                 />
               </div>
               <div className="my-4 flex flex-col space-y-2">
-                <label className="text-sm text-neutral-400" htmlFor="fullname">
+                <label className="text-sm text-neutral-400" htmlFor="username">
                   Username
                 </label>
                 <input
-                  id="fullname"
+                  id="username"
                   className="rounded-lg bg-neutral-700 py-2 pl-6 text-sm text-neutral-300 placeholder:text-neutral-400 focus:outline-none focus:ring-blue-500"
-                  placeholder="Full name"
+                  placeholder="username"
                   value={username}
                   onChange={(e) => {
                     setUsername(e.target.value)

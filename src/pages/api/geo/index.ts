@@ -15,6 +15,8 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
   const country = geoip.lookup(ip)
 
+  res.setHeader('Content-Type', 'application/json')
+
   return res.status(200).json({
     geo: {
       clientIp: ip,

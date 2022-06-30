@@ -1,11 +1,12 @@
 import * as React from 'react'
 import Head from 'next/head'
+import geoip from 'geoip-lite'
 import { getSession, useSession } from 'next-auth/react'
 import { GetServerSideProps } from 'next'
 import AuthNav from '@/components/navbar/AuthNav'
 import WindowsIcon from '@/components/icons/WindowsIcon'
 
-const Profile = ({ ip, plateform }) => {
+const Profile = ({ ip, plateform, geo }) => {
   const [oldPassword, setOldPassword] = React.useState('')
   const [newPassword, setNewPassword] = React.useState('')
   const [confirmPassword, setConfirmPassword] = React.useState('')
@@ -127,9 +128,7 @@ const Profile = ({ ip, plateform }) => {
                 </p>
                 <div className=" mb-2 flex items-center">
                   <WindowsIcon />
-                  <span className="ml-3">
-                    {plateform.replace(/"/g, '')} - {ip}
-                  </span>
+                  <span className="ml-3">windows - 122.234.21.1</span>
                 </div>
                 <p className="mx-9 text-neutral-400">
                   Chrome - <span className="text-green-400">Active now</span>
@@ -145,11 +144,10 @@ const Profile = ({ ip, plateform }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
-  const forwarded = context.req.headers['x-forwarded-for']
-  const ip =
-    typeof forwarded === 'string'
-      ? forwarded.split(/, /)[0]
-      : context.req.socket.remoteAddress
+
+  const resp = await fetch('http:/localhost:3000/api/geo')
+  const json = await resp.json()
+  console.log(json)
   if (!session) {
     return {
       redirect: {
@@ -160,11 +158,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   return {
-    props: {
-      session,
-      ip,
-      plateform: context.req.headers['sec-ch-ua-platform'],
-    },
+    props: {},
   }
 }
 

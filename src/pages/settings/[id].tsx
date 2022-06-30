@@ -1,16 +1,17 @@
 import * as React from 'react'
 import Head from 'next/head'
-import geoip from 'geoip-lite'
 import { getSession, useSession } from 'next-auth/react'
 import { GetServerSideProps } from 'next'
 import AuthNav from '@/components/navbar/AuthNav'
 import WindowsIcon from '@/components/icons/WindowsIcon'
 
-const Profile = ({ ip, plateform, geo }) => {
+const Profile = ({ ip, country }) => {
   const [oldPassword, setOldPassword] = React.useState('')
   const [newPassword, setNewPassword] = React.useState('')
   const [confirmPassword, setConfirmPassword] = React.useState('')
   const [loading, setLoading] = React.useState(false)
+
+  console.log(ip, country)
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -146,8 +147,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
 
   const resp = await fetch('http:/localhost:3000/api/geo')
-  const json = await resp.json()
-  console.log(json)
+  const { clientCountry, clientIp } = await resp.json()
+
   if (!session) {
     return {
       redirect: {
@@ -158,7 +159,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   return {
-    props: {},
+    props: { country: clientCountry, ip: clientIp },
   }
 }
 

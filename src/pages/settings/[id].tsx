@@ -10,7 +10,7 @@ import AuthNav from '@/components/navbar/AuthNav'
 import LaptopIcon from '@/components/icons/LaptopIcon'
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon'
 
-const Profile = ({ country, deviceOS, ua }) => {
+const Profile = ({ country, deviceOS, ua, ip }) => {
   const [oldPassword, setOldPassword] = React.useState('')
   const [newPassword, setNewPassword] = React.useState('')
   const [confirmPassword, setConfirmPassword] = React.useState('')
@@ -156,7 +156,7 @@ const Profile = ({ country, deviceOS, ua }) => {
                 <Modal
                   isOpen={isOpen}
                   setIsOpen={setIsOpen}
-                  data={{ country, ua, deviceOS }}
+                  data={{ country, ua, deviceOS, ip }}
                 />
               </div>
             </div>
@@ -189,7 +189,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const country = geoip.lookup(ip)
 
   return {
-    props: { country, deviceOS, ua: ua['browser'] },
+    props: { country, deviceOS, ua: ua['browser'], ip },
   }
 }
 

@@ -5,6 +5,7 @@ import geoip from 'geoip-lite'
 import uaParser from 'ua-parser-js'
 import { getSession } from 'next-auth/react'
 import { GetServerSideProps } from 'next'
+import Modal from '@/components/session/Modal'
 import AuthNav from '@/components/navbar/AuthNav'
 import LaptopIcon from '@/components/icons/LaptopIcon'
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon'
@@ -13,6 +14,7 @@ const Profile = ({ country, deviceOS, ua }) => {
   const [oldPassword, setOldPassword] = React.useState('')
   const [newPassword, setNewPassword] = React.useState('')
   const [confirmPassword, setConfirmPassword] = React.useState('')
+  const [isOpen, setIsOpen] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
 
   const submitData = async (e: React.SyntheticEvent) => {
@@ -128,15 +130,18 @@ const Profile = ({ country, deviceOS, ua }) => {
                 <p className="my-4 text-lg font-semibold">
                   Current active sessions
                 </p>
-                <div className="-mx-4 mb-2 flex items-center justify-between rounded-xl p-4 hover:bg-neutral-700">
+                <div
+                  onClick={() => setIsOpen(true)}
+                  className="-mx-4 mb-2 flex select-none items-center justify-between rounded-xl p-4 hover:bg-neutral-700"
+                >
                   <div className="flex space-x-4">
                     <div className="flex items-center rounded-full bg-neutral-700 p-2.5">
                       <LaptopIcon />
                     </div>
                     <div className="flex flex-col space-y-1">
                       <span className="">
-                        {deviceOS?.replace(/"/g, '')} - {country.city},{' '}
-                        {country.country}
+                        {deviceOS?.replace(/"/g, '')} - {country.city || ''},{' '}
+                        {country.country || ''}
                       </span>
                       <p className=" text-neutral-400">
                         {ua.name} -{' '}
@@ -148,6 +153,11 @@ const Profile = ({ country, deviceOS, ua }) => {
                     <ChevronRightIcon h="22" w="22" sw={1.5} />
                   </div>
                 </div>
+                <Modal
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  data={{ country, ua, deviceOS }}
+                />
               </div>
             </div>
           </div>

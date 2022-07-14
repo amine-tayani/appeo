@@ -41,6 +41,7 @@ const Dashboard = () => {
       <div className="min-h-screen bg-neutral-800">
         <AuthNav />
         <div className="container mx-auto -mt-16 flex max-w-screen-md flex-col justify-center">
+          <div className="mt-8 text-3xl text-white"></div>
           <h1 className="mb-1 text-left text-2xl font-semibold text-neutral-100">
             Dashboard
           </h1>

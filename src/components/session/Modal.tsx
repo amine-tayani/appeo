@@ -40,7 +40,7 @@ const Modal: React.FC<Props> = ({ isOpen, setIsOpen, data }) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-neutral-800 px-8 py-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-neutral-800 px-12 py-6 text-left align-middle shadow-xl transition-all">
                 <button
                   type="button"
                   className=" mb-8 transform text-neutral-400 hover:scale-110 hover:text-neutral-200 focus:outline-none"
@@ -48,7 +48,7 @@ const Modal: React.FC<Props> = ({ isOpen, setIsOpen, data }) => {
                 >
                   <ArrowLeftIcon h="24" w="24" sw={1.5} />
                 </button>
-                <div className="flex items-center justify-between">
+                <div className="mb-8 flex items-center justify-between">
                   <div className="flex space-x-4">
                     <div className="flex items-center rounded-full bg-neutral-600 p-3 text-neutral-300">
                       <LaptopIcon />
@@ -67,7 +67,7 @@ const Modal: React.FC<Props> = ({ isOpen, setIsOpen, data }) => {
                     <p className="text-sm text-neutral-400">{data.ip}</p>
                     <div />
                   </div>
-                  <button className="h-9 rounded-xl px-4 text-sm text-neutral-300 ring-1 ring-red-500 hover:bg-red-600 hover:text-neutral-200 focus:outline-none">
+                  <button className="rounded-lg py-1.5 px-4 text-sm text-neutral-300 ring-1 ring-red-500 hover:bg-red-600 hover:text-neutral-200 focus:outline-none">
                     Log out
                   </button>
                 </div>

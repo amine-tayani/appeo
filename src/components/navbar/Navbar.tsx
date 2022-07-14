@@ -96,9 +96,9 @@ const Navbar: React.FunctionComponent = () => {
           <div className="mr-12 hidden items-center space-x-10 md:flex ">
             <a
               href="/signup"
-              className="rounded-lg bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-500 focus:outline-none"
+              className="rounded-lg bg-neutral-50 px-8 py-3 text-sm font-medium text-neutral-800 hover:bg-white focus:outline-none"
             >
-              Start Free
+              Get Started
             </a>
           </div>
           <motion.button

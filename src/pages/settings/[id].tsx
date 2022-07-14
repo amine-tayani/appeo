@@ -9,6 +9,18 @@ import Modal from '@/components/session/Modal'
 import AuthNav from '@/components/navbar/AuthNav'
 import LaptopIcon from '@/components/icons/LaptopIcon'
 import ChevronRightIcon from '@/components/icons/ChevronRightIcon'
+import MacIcon from '@/components/icons/MacIcon'
+import IosIcon from '@/components/icons/IosIcon'
+import AndroidIcon from '@/components/icons/AndroidIcon'
+
+enum SecUaPlatform {
+  Windows = 'Windows',
+  MacOS = 'MacOS',
+  Linux = 'Linux',
+  iOS = 'iOS',
+  Android = 'Android',
+  Other = 'Other',
+}
 
 const Profile = ({ country, deviceOS, ua, ip }) => {
   const [oldPassword, setOldPassword] = React.useState('')
@@ -16,6 +28,23 @@ const Profile = ({ country, deviceOS, ua, ip }) => {
   const [confirmPassword, setConfirmPassword] = React.useState('')
   const [isOpen, setIsOpen] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
+
+  const getDeviceOS = (sp: SecUaPlatform): React.ReactElement | null => {
+    switch (sp) {
+      case SecUaPlatform.Windows || SecUaPlatform.Linux:
+        return <LaptopIcon />
+      case SecUaPlatform.MacOS:
+        return <MacIcon />
+      case SecUaPlatform.iOS:
+        return <IosIcon />
+      case SecUaPlatform.Android:
+        return <AndroidIcon />
+      default:
+        return null
+    }
+  }
+
+  const [device_os] = React.useState(getDeviceOS(deviceOS?.replace(/"/g, '')))
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -136,7 +165,7 @@ const Profile = ({ country, deviceOS, ua, ip }) => {
                 >
                   <div className="flex space-x-4">
                     <div className="flex items-center rounded-full bg-neutral-700 p-2.5">
-                      <LaptopIcon />
+                      {device_os}
                     </div>
                     <div className="flex flex-col space-y-1">
                       <span className="">

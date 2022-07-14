@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+
 const Sections: React.FunctionComponent = () => {
   return (
     <React.Fragment>
@@ -19,7 +20,7 @@ const Sections: React.FunctionComponent = () => {
               <div className="">
                 <img
                   className="relative max-w-[330px] rounded-2xl sm:max-w-[400px] md:max-w-[600px] xl:left-2 xl:max-w-3xl"
-                  src="https://res.cloudinary.com/glasnik/image/upload/v1651756076/media/image2-section_tefzfp.png"
+                  src="https://i.redd.it/j9gn14kige991.png"
                   alt=""
                 />
               </div>
@@ -43,7 +44,7 @@ const Sections: React.FunctionComponent = () => {
               <div className="">
                 <img
                   className="relative max-w-[330px] rounded-2xl sm:max-w-[400px] md:max-w-[600px] xl:left-2 xl:max-w-3xl"
-                  src="https://res.cloudinary.com/glasnik/image/upload/v1651756079/media/image1-section_v5ghrn.png"
+                  src="https://preview.redd.it/tjb4gwq6ge991.png?width=1571&format=png&auto=webp&s=150cfbcafb203185e7591e40166e06741b10eefc"
                   alt=""
                 />
               </div>

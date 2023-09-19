@@ -1,8 +1,4 @@
-# Project Title
-
-Trace App
-
-## Description
+# Trace App
 
 Trace is a job application tracking web app designed to empower job seekers on their journey to career success.
 
